@@ -4,7 +4,7 @@
 
 ---
 <p align="center">
-  <img src="assets/bannerus.png" alt="Ru‑chatbro — Чат‑плагин с поддержкой Telegram, ВКонтакте, Одноклассников и Макс">
+  <img src="assets/banneruss.png" alt="Ru‑chatbro — Чат‑плагин с поддержкой Telegram, ВКонтакте, Одноклассников и Макс">
 </p>
 
 ## 🇷🇺 Ru‑chatbro – многофункциональный чат‑плагин для WordPress
