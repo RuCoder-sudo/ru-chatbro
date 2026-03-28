@@ -10,7 +10,7 @@
 ## 🇷🇺 Ru‑chatbro – многофункциональный чат‑плагин для WordPress
 
 **Ru‑chatbro** – это мощный и гибкий плагин для WordPress, который превращает ваш сайт в единую точку общения с посетителями.  
-Плагин интегрируется с популярными мессенджерами (**Telegram**, **ВКонтакте**, **Одноклассники**, **Макс**) и не требует ежемесячной оплаты – полный аналог ChatBro, но без сторонних сервисов и скрытых тарифов.
+Плагин интегрируется с популярными мессенджерами (**Telegram**, **ВКонтакте**, **Одноклассники**, **Макс**) и не требует ежемесячной оплаты без сторонних сервисов и скрытых тарифов.
 
 ---
 
@@ -127,7 +127,7 @@ GPL v2 or later
 
 ## 🇺🇸 Ru‑chatbro – Multifunctional Chat Plugin for WordPress
 
-**Ru‑chatbro** is a powerful WordPress plugin that turns your website into a central communication hub. It integrates with popular messengers (**Telegram**, **VKontakte**, **Odnoklassniki**, **Max**) and requires no monthly fees – a full‑fledged alternative to ChatBro without third‑party services.
+**Ru‑chatbro** is a powerful WordPress plugin that turns your website into a central communication hub. It integrates with popular messengers (**Telegram**, **VKontakte**, **Odnoklassniki**, **Max**) and requires no monthly fees.
 
 ---
 
