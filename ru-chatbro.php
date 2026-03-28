@@ -1,17 +1,29 @@
 <?php
 /**
  * Plugin Name: Ru-chatbro
- * Plugin URI: https://github.com/ru-chatbro/ru-chatbro
+ * Plugin URI: https://github.com/RuCoder-sudo/
  * Description: Русский чат-плагин с поддержкой ВКонтакте, Telegram, Одноклассников и Макс. Аналог ChatBro без тарифов и сторонних сервисов.
- * Version: 1.0.0
- * Author: Ru-chatbro
- * Author URI: https://github.com/ru-chatbro
+ * Version: 3.2
+ * Author: Сергей Солошенко (RuCoder)
+ * Author URI: https://рукодер.рф/
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ru-chatbro
  * Domain Path: /languages
  * Requires at least: 5.8
+ * Tested up to: 6.5
  * Requires PHP: 7.4
+ * Network: false
+ *
+ * Разработчик: Сергей Солошенко | РуКодер
+ * Специализация: Веб-разработка с 2018 года | WordPress / Full Stack
+ * Принцип работы: "Сайт как для себя"
+ * Контакты:
+ * - Телефон/WhatsApp: +7 (985) 985-53-97
+ * - Email: support@рукодер.рф
+ * - Telegram: @RussCoder
+ * - Портфолио: https://рукодер.рф
+ * - GitHub: https://github.com/RuCoder-sudo
  */
 
 if (!defined('ABSPATH')) {
