@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Ru-chatbro
  * Plugin URI: https://github.com/RuCoder-sudo/
- * Description: Русский чат-плагин с поддержкой ВКонтакте, Telegram, Одноклассников и Макс. Аналог ChatBro без тарифов и сторонних сервисов.
+ * Description: Русский чат-плагин с поддержкой ВКонтакте, Telegram, Одноклассников и Макс.
  * Version: 3.2
  * Author: Сергей Солошенко (RuCoder)
  * Author URI: https://рукодер.рф/
