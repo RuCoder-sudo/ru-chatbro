@@ -1,0 +1,248 @@
+/* Ru-chatbro Public Chat Widget */
+:root {
+  --rcb-primary: #0077ff;
+  --rcb-bg: #ffffff;
+  --rcb-text: #222222;
+  --rcb-header-bg: #0077ff;
+  --rcb-header-text: #ffffff;
+  --rcb-width: 350px;
+  --rcb-height: 300px;
+  --rcb-radius: 12px;
+  --rcb-font-size: 13px;
+  --rcb-shadow: 0 8px 32px rgba(0,0,0,0.15);
+}
+
+/* ===== ПЛАВАЮЩИЙ ВИДЖЕТ ===== */
+.ru-chatbro-wrapper.ru-chatbro-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--rcb-font-size);
+}
+
+.ru-chatbro-wrapper.ru-chatbro-floating .ru-chatbro-container {
+  display: none;
+  position: absolute;
+  bottom: 64px;
+  right: 0;
+  width: var(--rcb-width);
+  height: var(--rcb-height);
+  min-width: 280px;
+  min-height: 240px;
+  background: var(--rcb-bg);
+  border-radius: var(--rcb-radius);
+  box-shadow: var(--rcb-shadow);
+  border: 1px solid rgba(0,0,0,0.1);
+  overflow: hidden;
+  flex-direction: column;
+  animation: rcbFadeIn 0.2s ease;
+}
+
+.ru-chatbro-wrapper.ru-chatbro-floating.rcb-open .ru-chatbro-container {
+  display: flex;
+}
+
+/* ===== ВСТРОЕННЫЙ ===== */
+.ru-chatbro-wrapper.ru-chatbro-inline {
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--rcb-font-size);
+}
+
+.ru-chatbro-wrapper.ru-chatbro-inline .ru-chatbro-container {
+  display: flex;
+  width: var(--rcb-width);
+  height: var(--rcb-height);
+  background: var(--rcb-bg);
+  border-radius: var(--rcb-radius);
+  box-shadow: var(--rcb-shadow);
+  border: 1px solid rgba(0,0,0,0.1);
+  overflow: hidden;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.ru-chatbro-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--rcb-header-bg);
+  color: var(--rcb-header-text);
+  flex-shrink: 0;
+}
+.ru-chatbro-title { font-weight: 600; font-size: 14px; flex: 1; }
+.ru-chatbro-header-actions { display: flex; align-items: center; gap: 8px; }
+.ru-chatbro-users-count { font-size: 11px; opacity: 0.8; }
+.ru-chatbro-toggle {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: inherit;
+  width: 24px; height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.ru-chatbro-toggle:hover { background: rgba(255,255,255,0.3); }
+
+/* ===== BODY ===== */
+.ru-chatbro-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--rcb-text);
+}
+
+/* ===== MESSAGES ===== */
+.ru-chatbro-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  scroll-behavior: smooth;
+}
+.ru-chatbro-messages::-webkit-scrollbar { width: 4px; }
+.ru-chatbro-messages::-webkit-scrollbar-track { background: transparent; }
+.ru-chatbro-messages::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
+
+.ru-chatbro-loading { color: #aaa; text-align: center; padding: 16px; }
+
+/* Сообщение */
+.rcb-message {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  animation: rcbMsgIn 0.15s ease;
+}
+.rcb-avatar {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--rcb-primary);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600;
+}
+.rcb-msg-content { flex: 1; min-width: 0; }
+.rcb-msg-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+.rcb-msg-author { font-weight: 600; font-size: 12px; color: var(--rcb-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rcb-msg-time { font-size: 10px; color: #aaa; flex-shrink: 0; }
+.rcb-msg-source { display: inline-block; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 700; text-transform: uppercase; }
+.rcb-source-vk      { background: #e8f0ff; color: #0077ff; }
+.rcb-source-telegram { background: #e3f8ff; color: #0088cc; }
+.rcb-source-ok       { background: #fff4e0; color: #e87a00; }
+.rcb-source-max      { background: #fff0f8; color: #cc3399; }
+.rcb-source-website  { display: none; }
+.rcb-msg-text { font-size: var(--rcb-font-size); line-height: 1.5; word-break: break-word; }
+
+/* ===== INPUT ===== */
+.ru-chatbro-anon-name { padding: 6px 10px 0; }
+.ru-chatbro-anon-name input {
+  width: 100%; padding: 6px 10px;
+  border: 1.5px solid #e0e0e0; border-radius: 8px;
+  font-size: 12px; box-sizing: border-box;
+  outline: none; transition: border-color 0.2s;
+}
+.ru-chatbro-anon-name input:focus { border-color: var(--rcb-primary); }
+
+.ru-chatbro-auth-msg { padding: 10px; text-align: center; font-size: 13px; color: #888; }
+.ru-chatbro-auth-msg a { color: var(--rcb-primary); }
+
+.ru-chatbro-input-area {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  padding: 8px 10px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+  flex-shrink: 0;
+}
+.ru-chatbro-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: var(--rcb-font-size);
+  resize: none;
+  font-family: inherit;
+  min-height: 34px;
+  max-height: 100px;
+  line-height: 1.4;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.ru-chatbro-input:focus { border-color: var(--rcb-primary); }
+.ru-chatbro-send {
+  width: 34px; height: 34px;
+  background: var(--rcb-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s, transform 0.1s;
+}
+.ru-chatbro-send:hover { filter: brightness(1.1); }
+.ru-chatbro-send:active { transform: scale(0.94); }
+.ru-chatbro-send:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ===== BUBBLE (плавающая кнопка) ===== */
+.ru-chatbro-bubble {
+  position: relative;
+  width: 54px; height: 54px;
+  background: var(--rcb-primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,119,255,0.4);
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 1;
+}
+.ru-chatbro-bubble:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(0,119,255,0.5); }
+.ru-chatbro-bubble-count {
+  position: absolute;
+  top: -4px; right: -4px;
+  background: #f44336;
+  color: #fff;
+  font-size: 10px; font-weight: 700;
+  min-width: 18px; height: 18px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 4px;
+  display: none;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes rcbFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes rcbMsgIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .ru-chatbro-wrapper.ru-chatbro-floating {
+    bottom: 10px; right: 10px;
+  }
+  .ru-chatbro-wrapper.ru-chatbro-floating .ru-chatbro-container {
+    width: calc(100vw - 20px);
+    right: 0;
+  }
+}
